@@ -6,7 +6,7 @@ function isInteger(n) {
 //Напишите функцию, которая возвращает массив четных чисел от 2 до 20 включительно
 function even() {
     var numbers = [];
-    for (var i = 2; i < 21; i += 2) {
+    for (var i = 2; i <= 20; i += 2) {
         numbers.push(i);
     }
     return numbers;
@@ -71,15 +71,7 @@ function fibonacci(n) {
  * console.log(sumFn(5)) - 15
  * console.log(sumFn(3)) - 18
  */
-function getOperationFn(initialValue, operatorFn) {
-    let value = initialValue;
-    return (val) => {
-        if (operatorFn !== undefined) {
-            value = operatorFn(value, val);
-        }
-        return value;
-    };
-}
+function getOperationFn(initialValue, operatorFn) {}
 
 /**
  * Напишите функцию создания генератора арифметической последовательности.
@@ -97,15 +89,7 @@ function getOperationFn(initialValue, operatorFn) {
  * console.log(generator()); // 7
  * console.log(generator()); // 9
  */
-function sequence(start, step) {
-    if(start === undefined) start = 0;
-    if(step === undefined) step = 1;
-    return function(){
-        let value = start;
-        start += step;        
-        return value;
-    }
-}
+function sequence(start, step) {}
 
 /**
  * Напишите функцию deepEqual, которая принимает два значения
@@ -121,29 +105,7 @@ function sequence(start, step) {
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 33], text: 'text'}) // true
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'}) // false
  */
-function deepEqual(firstObject, secondObject) {
-    if (firstObject === secondObject) {
-        return true;
-    }
-
-    if (
-        isNaN(firstObject) &&
-        isNaN(secondObject) &&
-        typeof firstObject === 'number' &&
-        typeof secondObject === 'number'
-    )  return true;
-    
-    if (
-        typeof firstObject !== 'object' ||
-        firstObject === null ||
-        typeof secondObject !== 'object' ||
-        secondObject === null
-    ) return false;
-
-    
-
-    return true;
-}
+function deepEqual(firstObject, secondObject) {}
 
 module.exports = {
     isInteger,
